@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://blupuowp83b53"]
+
+[ext_resource type="PackedScene" uid="uid://dq025ydav7dml" path="res://Components/health_component.tscn" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://gkonyaf652jh" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sh265"]
+radius = 7.0
+height = 34.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sh265")
+
+[node name="Health Component" parent="." instance=ExtResource("1_4flbx")]
+
+[node name="Sprite" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -13.0
+offset_right = 6.0
+offset_bottom = 17.0
