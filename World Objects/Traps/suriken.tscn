@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://blbl6m2dvgggm"]
+
+[ext_resource type="Texture2D" uid="uid://cynwheyydkdvx" path="res://World Objects/Traps/Assets/Suriken.png" id="1_7s2wd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4m2p"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0qrq"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plwjk"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jwrd"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y710"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihuc8"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxemn"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc0bc"]
+atlas = ExtResource("1_7s2wd")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2mpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4m2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0qrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plwjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jwrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y710")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihuc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxemn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc0bc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5f8ld"]
+radius = 16.0312
+
+[node name="Suriken" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_l2mpi")
+frame_progress = 0.903332
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_5f8ld")
