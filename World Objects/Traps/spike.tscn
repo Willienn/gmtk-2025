@@ -61,7 +61,7 @@ sprite_frames = SubResource("SpriteFrames_jv4b2")
 frame_progress = 0.187348
 script = ExtResource("2_7k7bx")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -2)
