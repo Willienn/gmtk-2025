@@ -6,3 +6,7 @@ func _physics_process(delta: float) -> void:
 		hitbox.disabled = true
 	else:
 		hitbox.disabled = false
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

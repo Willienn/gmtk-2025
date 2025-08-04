@@ -8,7 +8,6 @@ signal threshold_reached(threshold: float)
 
 @export var min_armor := 0
 @export var max_armor := 10
-@export var armor_degradation := 1
 
 @export var max_health := 100.0:
 	set(value):
