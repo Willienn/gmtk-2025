@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/.idea/.gitignore
+/.idea/gmtk-game-jan.iml
+/.idea/modules.xml
+/.idea/vcs.xml
