@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5f8ld"]
-radius = 16.0312
+radius = 15.0
 
 [node name="Suriken" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_l2mpi")

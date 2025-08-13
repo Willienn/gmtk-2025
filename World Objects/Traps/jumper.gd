@@ -15,8 +15,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	should_impulse = false
 
 
-func _process(delta: float) -> void:
-	if should_impulse and animated_sprite.frame == 3 and target_body:
+func _process(delta: float) -> void: 
+	if should_impulse and animated_sprite.frame == 1 and target_body:
 		target_body.velocity.y = -400
 		should_impulse = false 
 	if target_body:

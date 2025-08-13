@@ -52,4 +52,5 @@ func heal(amount: float) -> void:
 
 func die(shooter: Trap) -> void:
 	health_depleted.emit(shooter)
-	get_parent().queue_free()
+	get_parent().global_position = Vector2(82,32)
+	#get_parent().queue_free()

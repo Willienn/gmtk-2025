@@ -1,10 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://blupuowp83b53"]
+[gd_scene load_steps=49 format=3 uid="uid://blupuowp83b53"]
 
 [ext_resource type="PackedScene" uid="uid://dq025ydav7dml" path="res://Components/health_component.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://gkonyaf652jh" path="res://Entities/player.gd" id="1_kee72"]
 [ext_resource type="Texture2D" uid="uid://bfb6k5bqivd3u" path="res://satiro-Sheet v1.1.png" id="3_xd3k7"]
-[ext_resource type="Texture2D" uid="uid://cqhecdg60mncr" path="res://circle.png" id="4_taegk"]
-[ext_resource type="Texture2D" uid="uid://dw8vhsgjl1676" path="res://Spritesheet_UI_Flat_Animated.png" id="5_kee72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xd3k7"]
 size = Vector2(21, 29)
@@ -353,45 +351,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_prmdv"]
-radius = 127.429
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uck12"]
-atlas = ExtResource("5_kee72")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2173n"]
-atlas = ExtResource("5_kee72")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i322r"]
-atlas = ExtResource("5_kee72")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3k8vt"]
-atlas = ExtResource("5_kee72")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5c62e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uck12")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2173n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i322r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3k8vt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
-
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_kee72")
@@ -415,23 +374,3 @@ limit_left = 0
 limit_right = 1280
 limit_bottom = 720
 limit_smoothed = true
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1, 8)
-scale = Vector2(1.04419, 1.04419)
-collision_layer = 32768
-collision_mask = 32768
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_prmdv")
-
-[node name="Circle" type="Sprite2D" parent="Area2D"]
-modulate = Color(1, 1, 1, 0.180392)
-scale = Vector2(0.982449, 0.982449)
-texture = ExtResource("4_taegk")
-
-[node name="Cursor" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(-0.957679, -7.66143)
-scale = Vector2(0.957679, 0.963803)
-sprite_frames = SubResource("SpriteFrames_5c62e")
-frame_progress = 0.166108
