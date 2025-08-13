@@ -69,8 +69,6 @@ size = Vector2(9, 15)
 [node name="Spear" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_imwg3")
 autoplay = "default"
-frame = 7
-frame_progress = 1.0
 script = ExtResource("2_m0qcn")
 
 [node name="Area2D" type="Area2D" parent="."]

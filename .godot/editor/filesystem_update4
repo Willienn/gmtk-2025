@@ -13,3 +13,4 @@ res://Entities/player.gd
 res://World Objects/Traps/jumper.gd
 res://Components/health_component.gd
 res://main.tscn
+res://World Objects/Traps/spear.gd
