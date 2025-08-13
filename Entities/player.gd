@@ -9,7 +9,7 @@ const COYOTE_TIME := 0.2
 const RUN_SPEED := 300.0
 const WALK_SPEED := 200.0
 const DASH_FORCE := 2000.0
-const WALL_KICK_FORCE := 400.0
+const WALL_KICK_FORCE := 600.0
 const WALL_SLIDE_SPEED := 80.0
 const DASH_DURATION := 0.2
 const WALL_JUMP_DASH_LOCK := 0.15
@@ -104,10 +104,10 @@ func handle_air_effects(delta: float) -> void:
 
 	if is_on_wall_only():
 		if Input.is_action_just_pressed("move_up") and can_wall_jump:
-			velocity.x += input_direction * -WALL_KICK_FORCE
+			var wall_normal := get_wall_normal()
+			velocity.x = wall_normal.x * WALL_KICK_FORCE
 			velocity.y = JUMP_FORCE
 			can_wall_jump = false
-			dash_lock_timer = WALL_JUMP_DASH_LOCK
 	else:
 		can_wall_jump = true
 
