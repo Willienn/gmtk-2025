@@ -29,13 +29,16 @@ var dash_timer := 0.0
 var jump_release_timer := 0.0
 var dash_lock_timer := 0.0
 
+
 func _ready() -> void:
 	pass
+
 
 func _physics_process(delta: float) -> void:
 	update_timers(delta)
 	handle_movement(delta)
 	move_and_slide()
+
 
 func update_timers(delta: float) -> void:
 	if dash_timer > 0:
@@ -48,11 +51,13 @@ func update_timers(delta: float) -> void:
 	if Input.is_action_just_released("move_up"):
 		jump_release_timer = JUMP_RELEASE_BUFFER
 
+
 func handle_movement(delta: float) -> void:
 	handle_dash()
 	handle_horizontal_movement(delta)
 	handle_air_effects(delta)
 	handle_movement_animations()
+
 
 func handle_horizontal_movement(delta: float) -> void:
 	var input_direction := Input.get_axis("move_left", "move_right")
@@ -77,6 +82,7 @@ func handle_horizontal_movement(delta: float) -> void:
 
 	velocity.x = lerp(velocity.x, target_velocity_x, 1.0 - exp((-ACCELERATION * 2) * delta))
 
+
 func handle_dash() -> void:
 	if dash_timer > 0 or dash_lock_timer > 0:
 		return
@@ -91,6 +97,7 @@ func handle_dash() -> void:
 
 	if dash_timer <= 0:
 		is_dashing = false
+
 
 func handle_air_effects(delta: float) -> void:
 	var input_direction := Input.get_axis("move_left", "move_right")
@@ -114,6 +121,7 @@ func handle_air_effects(delta: float) -> void:
 
 	try_jump()
 
+
 func apply_gravity(delta: float) -> void:
 	var multiplier := 1.0
 	if is_on_wall_only():
@@ -127,6 +135,7 @@ func apply_gravity(delta: float) -> void:
 
 	velocity.y += GRAVITY * multiplier * delta
 
+
 func try_jump() -> void:
 	if (coyote_timer > 0.0 or is_on_wall_only()) and Input.is_action_just_pressed("move_up"):
 		velocity.y = JUMP_FORCE
@@ -135,6 +144,7 @@ func try_jump() -> void:
 	elif velocity.y < 0.0 and jump_release_timer > 0:
 		velocity.y *= JUMP_CUT_MULTIPLIER
 		jump_release_timer = 0.0
+
 
 func handle_movement_animations() -> void:
 	if sign(velocity.x) == 1:
@@ -156,6 +166,7 @@ func handle_movement_animations() -> void:
 		return
 	if not is_dashing:
 		animations.play("idle")
+
 
 func handle_damage() -> void:
 	velocity *= Vector2(-0.8, -0.6)
