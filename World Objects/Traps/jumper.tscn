@@ -68,6 +68,7 @@ size = Vector2(21, 2)
 
 [node name="Jumper" type="StaticBody2D"]
 position = Vector2(0.5, 0)
+collision_layer = 4
 script = ExtResource("2_iw5d4")
 
 [node name="Animated Sprite" type="AnimatedSprite2D" parent="."]

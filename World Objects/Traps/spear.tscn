@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gnedu4rde01g"]
+[gd_scene load_steps=12 format=3 uid="uid://gnedu4rde01g"]
 
 [ext_resource type="Texture2D" uid="uid://cujpuvahk1vgh" path="res://World Objects/Traps/Assets/Spear.png" id="1_f1ptq"]
 [ext_resource type="Script" uid="uid://cq03e8yn587ag" path="res://World Objects/Traps/spear.gd" id="2_m0qcn"]
@@ -31,34 +31,22 @@ region = Rect2(80, 0, 16, 64)
 atlas = ExtResource("1_f1ptq")
 region = Rect2(128, 0, 16, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6m23v"]
-atlas = ExtResource("1_f1ptq")
-region = Rect2(144, 0, 16, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f2odk"]
-atlas = ExtResource("1_f1ptq")
-region = Rect2(160, 0, 16, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_skdy3"]
-atlas = ExtResource("1_f1ptq")
-region = Rect2(176, 0, 16, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_imwg3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3bygj")
 }, {
-"duration": 1.0,
+"duration": 8.0,
 "texture": SubResource("AtlasTexture_7pgk8")
 }, {
-"duration": 0.6,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_75oee")
 }, {
-"duration": 0.4,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_2qqet")
 }, {
-"duration": 0.4,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_3v67a")
 }, {
 "duration": 1.0,
@@ -66,15 +54,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q6y0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6m23v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f2odk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_skdy3")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0f2c3")
@@ -90,12 +69,16 @@ size = Vector2(9, 15)
 [node name="Spear" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_imwg3")
 autoplay = "default"
-frame = 10
+frame = 7
 frame_progress = 1.0
 script = ExtResource("2_m0qcn")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 24.5)
 shape = SubResource("RectangleShape2D_4mmfe")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

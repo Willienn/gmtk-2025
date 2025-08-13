@@ -27,8 +27,6 @@ func _process(delta: float) -> void:
 
 
 func on_animation_finished() -> void:
-	print("finished")
-	
 	hitbox.position.y = -4.5
 	hitbox.scale.y = 1 
 	animated_sprite.frame = 0

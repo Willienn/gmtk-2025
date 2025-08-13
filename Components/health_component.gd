@@ -3,11 +3,8 @@ class_name HealthComponent
 
 signal health_changed(old_value: float, new_value: float)
 signal health_depleted(killer: CharacterBody2D)
-signal damaged(entity: CharacterBody2D)
 signal threshold_reached(threshold: float)
-
-@export var min_armor := 0
-@export var max_armor := 10
+@onready var parent :Player = get_parent()
 
 @export var max_health := 100.0:
 	set(value):
@@ -38,8 +35,10 @@ var hit_count := 0:
 	set(value):
 		hit_count = min(value, 3)
 
-func take_damage(amount: float, shooter: CharacterBody2D) -> void:
-	damaged.emit(shooter)
+func take_damage(amount: float, shooter: Trap) -> void:
+	if parent.collision_mask == 2: return
+	if parent.has_method("handle_damage"):
+		parent.handle_damage()
 	current_health -= amount
 	hit_count += 1
 
@@ -51,6 +50,6 @@ func heal(amount: float) -> void:
 	current_health += amount
 
 
-func die(shooter: CharacterBody2D) -> void:
+func die(shooter: Trap) -> void:
 	health_depleted.emit(shooter)
 	get_parent().queue_free()

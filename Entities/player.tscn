@@ -1,7 +1,7 @@
 [gd_scene load_steps=57 format=3 uid="uid://blupuowp83b53"]
 
 [ext_resource type="PackedScene" uid="uid://dq025ydav7dml" path="res://Components/health_component.tscn" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://gkonyaf652jh" path="res://Entities/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://gkonyaf652jh" path="res://Entities/player.gd" id="1_kee72"]
 [ext_resource type="Texture2D" uid="uid://bfb6k5bqivd3u" path="res://satiro-Sheet v1.1.png" id="3_xd3k7"]
 [ext_resource type="Texture2D" uid="uid://cqhecdg60mncr" path="res://circle.png" id="4_taegk"]
 [ext_resource type="Texture2D" uid="uid://dw8vhsgjl1676" path="res://Spritesheet_UI_Flat_Animated.png" id="5_kee72"]
@@ -393,8 +393,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 13
-script = ExtResource("1_onrkg")
+collision_mask = 6
+script = ExtResource("1_kee72")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 6.5)

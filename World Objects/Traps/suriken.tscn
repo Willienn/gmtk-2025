@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://blbl6m2dvgggm"]
+[gd_scene load_steps=13 format=3 uid="uid://blbl6m2dvgggm"]
 
 [ext_resource type="Texture2D" uid="uid://cynwheyydkdvx" path="res://World Objects/Traps/Assets/Suriken.png" id="1_7s2wd"]
+[ext_resource type="Script" uid="uid://cc2l8qxq15q4f" path="res://World Objects/Traps/suriken.gd" id="2_cd7bx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4m2p"]
 atlas = ExtResource("1_7s2wd")
@@ -71,9 +72,14 @@ radius = 16.0312
 
 [node name="Suriken" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_l2mpi")
-frame_progress = 0.903332
+autoplay = "default"
+frame_progress = 0.483552
+script = ExtResource("2_cd7bx")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5f8ld")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

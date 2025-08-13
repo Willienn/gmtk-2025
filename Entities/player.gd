@@ -1,33 +1,39 @@
 extends CharacterBody2D
 class_name Player
-const GRAVITY := 500.0
+
+const GRAVITY := 600.0
 const JUMP_FORCE := -200.0
 const ACCELERATION := 15.0
 const JUMP_CUT_MULTIPLIER := 0.5
 const COYOTE_TIME := 0.2
 
+@onready var healt_component: HealthComponent = $"Health Component"
+@onready var hurtbox: CollisionShape2D = $Hurtbox
+
 @onready var animations := $"Animated Sprite"
 @onready var cursor := $Area2D/Cursor
 @onready var area_2d := $Area2D
 @onready var area_shape := $Area2D/CollisionShape2D
+
 var walk_speed := 200.0
 var coyote_timer := 0.0
 var is_running := false
 var track_mouse := false
 var is_dashing := false
+var can_dash := true
 
 func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-
+	print(collision_mask)
 	handle_mouse()
 	handle_movement(delta)
+	
 	move_and_slide()
 
 func handle_mouse()->void:
 	var mouse_pos = get_global_mouse_position()
-	
 	var area_center = area_2d.global_position
 	var radius = area_shape.shape.radius
 	
@@ -43,6 +49,9 @@ func handle_mouse()->void:
 func handle_movement(delta: float) -> void:
 	var input_direction := Input.get_axis("move_left", "move_right")
 
+	if is_on_floor() or is_on_wall():
+		can_dash = true
+		
 	
 	if Input.is_action_pressed("run") and is_on_floor() and input_direction != 0:
 		is_running = true
@@ -61,9 +70,12 @@ func handle_movement(delta: float) -> void:
 		
 	velocity.x = lerp(velocity.x, target_velocity_x, 1.0 - exp((-ACCELERATION * 2) * delta))
 	
-	if Input.is_action_just_pressed("dash") and input_direction != 0:
+	if Input.is_action_just_pressed("dash") and input_direction != 0 and can_dash:
+		can_dash = false
 		is_dashing = true
-		velocity.x += input_direction * 2000 
+		if is_on_wall_only():
+			velocity.x += input_direction * -2000
+		else: velocity.x += input_direction * 2000 
 		animations.play("dashing")
 		await animations.animation_finished
 		is_dashing = false
@@ -121,3 +133,11 @@ func handle_air_effects(input_direction: float, delta: float) -> void:
 		
 	if velocity.y < 0.0 and Input.is_action_just_released("move_up"):
 		velocity.y *= JUMP_CUT_MULTIPLIER
+		
+
+#
+
+func handle_damage() -> void:
+	self.collision_mask = 2
+	await get_tree().create_timer(0.5).timeout
+	self.collision_mask = 6
