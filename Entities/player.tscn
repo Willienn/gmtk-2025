@@ -366,12 +366,3 @@ max_health = 10.0
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_2173n")
 animation = &"idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -89)
-enabled = false
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_right = 1280
-limit_bottom = 720
-limit_smoothed = true

@@ -36,7 +36,7 @@ var hit_count := 0:
 		hit_count = min(value, 3)
 
 
-func take_damage(amount: float, shooter: Trap) -> void:
+func take_damage(amount: float, shooter: Node2D) -> void:
 	if parent.collision_mask == 2:
 		return
 	if parent.has_method("handle_damage"):
@@ -52,7 +52,7 @@ func heal(amount: float) -> void:
 	current_health += amount
 
 
-func die(shooter: Trap) -> void:
+func die(shooter: Node2D) -> void:
 	health_depleted.emit(shooter)
-	get_parent().global_position = Vector2(82, 32)
+	parent.on_died()
 	#get_parent().queue_free()

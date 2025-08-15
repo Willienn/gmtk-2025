@@ -6,14 +6,11 @@ const JUMP_FORCE := -200.0
 const ACCELERATION := 15.0
 const JUMP_CUT_MULTIPLIER := 0.5
 const COYOTE_TIME := 0.2
-const RUN_SPEED := 300.0
-const WALK_SPEED := 200.0
+const RUN_SPEED := 200.0
+const WALK_SPEED := 150.0
 const DASH_FORCE := 2000.0
 const WALL_KICK_FORCE := 600.0
 const WALL_SLIDE_SPEED := 80.0
-const DASH_DURATION := 0.2
-const WALL_JUMP_DASH_LOCK := 0.15
-const JUMP_RELEASE_BUFFER := 0.1
 
 @onready var health_component: HealthComponent = $"Health Component"
 @onready var hurtbox: CollisionShape2D = $Hurtbox
@@ -25,31 +22,18 @@ var is_running := false
 var is_dashing := false
 var can_dash := true
 var can_wall_jump := true
-var dash_timer := 0.0
-var jump_release_timer := 0.0
-var dash_lock_timer := 0.0
+
+signal died
 
 
 func _ready() -> void:
-	pass
+	Global.player = self
 
 
 func _physics_process(delta: float) -> void:
-	update_timers(delta)
+	#prints(global_position)
 	handle_movement(delta)
 	move_and_slide()
-
-
-func update_timers(delta: float) -> void:
-	if dash_timer > 0:
-		dash_timer -= delta
-	if dash_lock_timer > 0:
-		dash_lock_timer -= delta
-	if jump_release_timer > 0:
-		jump_release_timer -= delta
-
-	if Input.is_action_just_released("move_up"):
-		jump_release_timer = JUMP_RELEASE_BUFFER
 
 
 func handle_movement(delta: float) -> void:
@@ -84,18 +68,13 @@ func handle_horizontal_movement(delta: float) -> void:
 
 
 func handle_dash() -> void:
-	if dash_timer > 0 or dash_lock_timer > 0:
-		return
-
 	var input_direction := Input.get_axis("move_left", "move_right")
 	if Input.is_action_just_pressed("dash") and input_direction != 0 and can_dash:
 		can_dash = false
 		is_dashing = true
-		dash_timer = DASH_DURATION
 		velocity.x = input_direction * DASH_FORCE
 		animations.play("dashing")
-
-	if dash_timer <= 0:
+		await animations.animation_finished
 		is_dashing = false
 
 
@@ -140,10 +119,8 @@ func try_jump() -> void:
 	if (coyote_timer > 0.0 or is_on_wall_only()) and Input.is_action_just_pressed("move_up"):
 		velocity.y = JUMP_FORCE
 		coyote_timer = 0.0
-		jump_release_timer = 0.0
-	elif velocity.y < 0.0 and jump_release_timer > 0:
+	if Input.is_action_just_released("move_up"):
 		velocity.y *= JUMP_CUT_MULTIPLIER
-		jump_release_timer = 0.0
 
 
 func handle_movement_animations() -> void:
@@ -166,6 +143,11 @@ func handle_movement_animations() -> void:
 		return
 	if not is_dashing:
 		animations.play("idle")
+
+
+func on_died() -> void:
+	emit_signal("died")
+	velocity = Vector2(0, 0)
 
 
 func handle_damage() -> void:
