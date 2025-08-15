@@ -37,9 +37,9 @@ func _physics_process(delta: float) -> void:
 
 
 func handle_movement(delta: float) -> void:
-	handle_dash()
 	handle_horizontal_movement(delta)
 	handle_air_effects(delta)
+	handle_dash()
 	handle_movement_animations()
 
 
@@ -103,6 +103,10 @@ func handle_air_effects(delta: float) -> void:
 
 func apply_gravity(delta: float) -> void:
 	var multiplier := 1.0
+
+	if is_dashing:
+		multiplier = 0.8
+
 	if is_on_wall_only():
 		if velocity.y < 0.0:
 			multiplier = 0.8
