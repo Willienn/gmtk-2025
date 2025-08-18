@@ -1,13 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1755279909
+::res://::1755518885
 circle.png::CompressedTexture2D/CompressedTexture2D::5910560117713284569::1754051821::1754051821::1::::<><><>0<>0<>b89099565711750f417d8009c227f320<>res://.godot/imported/circle.png-10953cad44a8947fbdd4128a631e9e52.ctex::
 export_presets.cfg::TextFile/TextFile::-1::1755259490::0::1::::<><><>0<>0<><>::
-exterior.tres::TileSet::1106393621334736289::1755279890::0::1::::<><><>0<>0<><>::uid://cwv5epokcbg0o::::res://Assets/Terrain (32x32).png
-exterior.tscn::PackedScene::9078546820029656694::1755279890::0::1::::<><><>0<>0<><>::uid://p07e2lsus5vp::::res://exterior.tres<>uid://b7q0afac8cpc1::::res://World Objects/Assets/[v1.3] tranquil_tunnels_darker.png
+exterior.tres::TileSet::1106393621334736289::1755290189::0::1::::<><><>0<>0<><>::uid://cwv5epokcbg0o::::res://Assets/Terrain (32x32).png
+exterior.tscn::PackedScene::9078546820029656694::1755291787::0::1::::<><><>0<>0<><>::uid://p07e2lsus5vp::::res://exterior.tres
 Global.gd::GDScript/GDScript::1707952580703078518::1755193744::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::6439356044554418997::1753901468::1753901476::1::::<><><>0<>0<>57e32257a9b3ce5e48d843b8950b834c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 main.gd::GDScript/GDScript::1641554020070599097::1753904435::0::1::::<>Node2D<><>0<>0<><>::
-main.tscn::PackedScene::1510123012849408858::1755263099::0::1::::<><><>0<>0<><>::uid://xngfjbjckl3f::::res://main.gd<>uid://boftyqlbj40rp::::res://Levels/level_one.tscn
+main.tscn::PackedScene/PackedScene::1510123012849408858::1755263099::0::1::::<><><>0<>0<><>::uid://xngfjbjckl3f::::res://main.gd<>uid://boftyqlbj40rp::::res://Levels/level_one.tscn
 satiro-Sheet v1.1.png::CompressedTexture2D/CompressedTexture2D::2741330942335928128::1753991133::1753991133::1::::<><><>0<>0<>e882e029850fd1817a26b6cb681ec9c8<>res://.godot/imported/satiro-Sheet v1.1.png-ec2aed6a26e63df34caa939485b907ea.ctex::
 Spritesheet_UI_Flat_Animated.png::CompressedTexture2D/CompressedTexture2D::8772829589519224699::1754051097::1754051097::1::::<><><>0<>0<>63aebc1bc54331a510608909b6fbea3a<>res://.godot/imported/Spritesheet_UI_Flat_Animated.png-3c6fffe38ca3c1c0e3bc20afb0065ad2.ctex::
 tileset_mk_16_16_nature_tileset_godot.png::CompressedTexture2D/CompressedTexture2D::6898554110089267735::1753990614::1753990614::1::::<><><>0<>0<>996ce90a28da0f477a5f1fdbb13173b2<>res://.godot/imported/tileset_mk_16_16_nature_tileset_godot.png-cb23cc900edef960f2fcb4195ed0c603.ctex::
@@ -15,29 +15,29 @@ tileset_mk_16_16_nature_tileset_godot.png::CompressedTexture2D/CompressedTexture
 Terrain (32x32).png::CompressedTexture2D/CompressedTexture2D::6362177323151371360::1753969061::1753985823::1::::<><><>0<>0<>c4561b85b1896b9e49e6c219fa33f214<>res://.godot/imported/Terrain (32x32).png-339b3bcc666c3da8efc2d73a58301b34.ctex::
 ::res://Components/::1755263099
 health_component.gd::GDScript/GDScript::2788477921977035159::1755258351::0::1::::HealthComponent<>Node<><>0<>0<><>::
-health_component.tscn::PackedScene::8335587190985298495::1755263099::0::1::::<><><>0<>0<><>::uid://bfy03arpdp4kh::::res://Components/health_component.gd
-::res://Entities/::1755263113
-player.gd::GDScript::442651353418503845::1755263113::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::3200732759601580012::1755263113::0::1::::<><><>0<>0<><>::uid://dq025ydav7dml::::res://Components/health_component.tscn<>uid://gkonyaf652jh::::res://Entities/player.gd<>uid://bfb6k5bqivd3u::::res://satiro-Sheet v1.1.png
-::res://Levels/::1755279893
+health_component.tscn::PackedScene/PackedScene::8335587190985298495::1755263099::0::1::::<><><>0<>0<><>::uid://bfy03arpdp4kh::::res://Components/health_component.gd
+::res://Entities/::1755290193
+player.gd::GDScript::442651353418503845::1755290193::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene/PackedScene::3200732759601580012::1755263113::0::1::::<><><>0<>0<><>::uid://dq025ydav7dml::::res://Components/health_component.tscn<>uid://gkonyaf652jh::::res://Entities/player.gd<>uid://bfb6k5bqivd3u::::res://satiro-Sheet v1.1.png
+::res://Levels/::1755290193
 level_one.gd::GDScript/GDScript::978167379449417520::1755258351::0::1::::<>Node2D<><>0<>0<><>::
-level_one.tscn::PackedScene::3380583722737216269::1755279893::0::1::::<><><>0<>0<><>::uid://d2lylsy5ic2yk::::res://exterior.tscn<>uid://n63jksrsctto::::res://Levels/level_one.gd<>uid://cpkd2l2ngl7pk::::res://World Objects/Traps/spike.tscn<>uid://dc6k7r6lr0foj::::res://World Objects/Traps/jumper.tscn<>uid://bjgdqw3qikqrx::::res://World Objects/Traps/dead_zone.tscn<>uid://blupuowp83b53::::res://Entities/player.tscn<>uid://gnedu4rde01g::::res://World Objects/Traps/spear.tscn
+level_one.tscn::PackedScene::3380583722737216269::1755290193::0::1::::<><><>0<>0<><>::uid://d2lylsy5ic2yk::::res://exterior.tscn<>uid://n63jksrsctto::::res://Levels/level_one.gd<>uid://cpkd2l2ngl7pk::::res://World Objects/Traps/spike.tscn<>uid://dc6k7r6lr0foj::::res://World Objects/Traps/jumper.tscn<>uid://bjgdqw3qikqrx::::res://World Objects/Traps/dead_zone.tscn<>uid://blupuowp83b53::::res://Entities/player.tscn<>uid://gnedu4rde01g::::res://World Objects/Traps/spear.tscn
 ::res://World Objects/::1753997044
 ::res://World Objects/Assets/::1755279448
 Arrow_Double_Jump.png::CompressedTexture2D/CompressedTexture2D::2522679747372658425::1753981478::1753985917::1::::<><><>0<>0<>a8ba599959b3183a7a3c12aad5022f94<>res://.godot/imported/Arrow_Double_Jump.png-8170ad481d362b3f46c12e819f870e88.ctex::
 [v1.3] tranquil_tunnels_darker.png::CompressedTexture2D/CompressedTexture2D::4667011911746072058::1755279448::1755279448::1::::<><><>0<>0<>3ca38f2cea0424a257cc0b9284fdd437<>res://.godot/imported/[v1.3] tranquil_tunnels_darker.png-7cf973cc8bb10d19c4149ebc61f769d6.ctex::
 ::res://World Objects/Traps/::1755263099
 dead_zone.gd::GDScript/GDScript::961605782307557462::1755258351::0::1::::<>Area2D<><>0<>0<><>::
-dead_zone.tscn::PackedScene::3030718466146825321::1755263099::0::1::::<><><>0<>0<><>::uid://nx2rh185v4by::::res://World Objects/Traps/dead_zone.gd
+dead_zone.tscn::PackedScene/PackedScene::3030718466146825321::1755263099::0::1::::<><><>0<>0<><>::uid://nx2rh185v4by::::res://World Objects/Traps/dead_zone.gd
 jumper.gd::GDScript/GDScript::8869925147226397803::1755111076::0::1::::<>StaticBody2D<><>0<>0<><>::
-jumper.tscn::PackedScene::7364300705373227889::1755263099::0::1::::<><><>0<>0<><>::uid://ed0jfycnuk6u::::res://World Objects/Traps/Assets/Jumper.png<>uid://dymwmvgdq00od::::res://World Objects/Traps/jumper.gd
+jumper.tscn::PackedScene/PackedScene::7364300705373227889::1755263099::0::1::::<><><>0<>0<><>::uid://ed0jfycnuk6u::::res://World Objects/Traps/Assets/Jumper.png<>uid://dymwmvgdq00od::::res://World Objects/Traps/jumper.gd
 spear.gd::GDScript/GDScript::5949181299397240590::1755117569::0::1::::<>Trap<><>0<>0<><>::
 spear.tscn::PackedScene/PackedScene::448219294026681102::1755179453::0::1::::<><><>0<>0<><>::uid://cujpuvahk1vgh::::res://World Objects/Traps/Assets/Spear.png<>uid://cq03e8yn587ag::::res://World Objects/Traps/spear.gd
 spike.gd::GDScript/GDScript::2693837476739044635::1755115148::0::1::::<>Trap<><>0<>0<><>::
 spike.tscn::PackedScene/PackedScene::5846548786976736416::1755179453::0::1::::<><><>0<>0<><>::uid://dcgpcbeef8s7i::::res://World Objects/Traps/Assets/Spike_B.png<>uid://bem6dy1mm1ru6::::res://World Objects/Traps/spike.gd
 Spritesheet_UI_Flat_Animated.png::CompressedTexture2D/CompressedTexture2D::7705557615372944738::1754051935::1754051936::1::::<><><>0<>0<>06b7340cda97f12bd3e9f7b45efb24c4<>res://.godot/imported/Spritesheet_UI_Flat_Animated.png-507d36c7eb7781b3f18bf1de9df881c8.ctex::
 suriken.gd::GDScript/GDScript::4969684948808187503::1755258351::0::1::::Trap<>AnimatedSprite2D<><>0<>0<><>::
-suriken.tscn::PackedScene::3161286260151533200::1755263099::0::1::::<><><>0<>0<><>::uid://cynwheyydkdvx::::res://World Objects/Traps/Assets/Suriken.png<>uid://cc2l8qxq15q4f::::res://World Objects/Traps/suriken.gd
+suriken.tscn::PackedScene/PackedScene::3161286260151533200::1755263099::0::1::::<><><>0<>0<><>::uid://cynwheyydkdvx::::res://World Objects/Traps/Assets/Suriken.png<>uid://cc2l8qxq15q4f::::res://World Objects/Traps/suriken.gd
 ::res://World Objects/Traps/Assets/::1754060170
 Jumper.png::CompressedTexture2D/CompressedTexture2D::288482804579713162::1754060170::1753985901::1::::<><><>0<>0<>41dc6039682428b5402ad2c16ab79e8e<>res://.godot/imported/Jumper.png-88063aee4d9f401936e8738d10bd66cb.ctex::
 Spear.png::CompressedTexture2D/CompressedTexture2D::6196145214025793399::1753981504::1753985901::1::::<><><>0<>0<>56e348bc1f0de877fc7a2e34a5d07955<>res://.godot/imported/Spear.png-ede3c84dc9c90f8d1d773a4d3f57c1ef.ctex::
