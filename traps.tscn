@@ -1,0 +1,18 @@
+[gd_scene load_steps=7 format=3 uid="uid://bejfiesbdnpgr"]
+
+[ext_resource type="PackedScene" uid="uid://dc6k7r6lr0foj" path="res://World Objects/Traps/jumper.tscn" id="2_7v5up"]
+[ext_resource type="PackedScene" uid="uid://gnedu4rde01g" path="res://World Objects/Traps/spear.tscn" id="3_8wxif"]
+[ext_resource type="PackedScene" uid="uid://cpkd2l2ngl7pk" path="res://World Objects/Traps/spike.tscn" id="4_mla02"]
+[ext_resource type="PackedScene" uid="uid://blbl6m2dvgggm" path="res://World Objects/Traps/suriken.tscn" id="5_opcr7"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wqcok"]
+scenes/2/scene = ExtResource("2_7v5up")
+scenes/3/scene = ExtResource("3_8wxif")
+scenes/4/scene = ExtResource("4_mla02")
+scenes/5/scene = ExtResource("5_opcr7")
+
+[sub_resource type="TileSet" id="TileSet_ext2i"]
+sources/0 = SubResource("TileSetScenesCollectionSource_wqcok")
+
+[node name="Traps" type="TileMapLayer"]
+tile_set = SubResource("TileSet_ext2i")

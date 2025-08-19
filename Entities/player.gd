@@ -46,9 +46,6 @@ func handle_movement(delta: float) -> void:
 func handle_horizontal_movement(delta: float) -> void:
 	var input_direction := Input.get_axis("move_left", "move_right")
 
-	if is_on_floor() or is_on_wall():
-		can_dash = true
-
 	if Input.is_action_pressed("run") and is_on_floor() and input_direction != 0:
 		is_running = true
 	else:
@@ -68,6 +65,9 @@ func handle_horizontal_movement(delta: float) -> void:
 
 
 func handle_dash() -> void:
+	if is_on_floor() or is_on_wall():
+		can_dash = true
+
 	var input_direction := Input.get_axis("move_left", "move_right")
 	if Input.is_action_just_pressed("dash") and input_direction != 0 and can_dash:
 		can_dash = false

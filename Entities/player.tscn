@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bfb6k5bqivd3u" path="res://satiro-Sheet v1.1.png" id="3_xd3k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xd3k7"]
-size = Vector2(15, 23)
+size = Vector2(9, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xaxei"]
 atlas = ExtResource("3_xd3k7")
@@ -356,7 +356,7 @@ collision_mask = 6
 script = ExtResource("1_kee72")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 5.5)
+position = Vector2(3.5, 7)
 shape = SubResource("RectangleShape2D_xd3k7")
 
 [node name="Health Component" parent="." instance=ExtResource("1_4flbx")]
