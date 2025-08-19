@@ -81,12 +81,30 @@ rotation = -1.57079
 
 [node name="Jumper" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(182.5, 590)
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Jumper2" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(374, 494)
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Jumper3" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(535, 606)
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Spike" parent="Traps" instance=ExtResource("3_om7uc")]
 position = Vector2(968, 420)
@@ -122,20 +140,49 @@ rotation = 1.57081
 
 [node name="Jumper4" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(1798, 670)
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Jumper5" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(1942, 559)
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Jumper6" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(2054, 382)
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Jumper7" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(2213, 206)
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Jumper8" parent="Traps" instance=ExtResource("3_pvy0h")]
 position = Vector2(2396, 99)
 rotation = -1.57079
-direction = 2
+impulse_directions = {
+"DOWN": 1,
+"LEFT": 2,
+"RIGHT": 3,
+"UP": 0
+}
 
 [node name="Suriken" parent="." instance=ExtResource("8_whtlt")]
 position = Vector2(2678, 77)
